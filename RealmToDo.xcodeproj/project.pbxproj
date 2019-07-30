@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,8 @@
 		DDFEB40C22EFEC0000DE025C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDFEB40A22EFEC0000DE025C /* Main.storyboard */; };
 		DDFEB40E22EFEC0000DE025C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDFEB40D22EFEC0000DE025C /* Assets.xcassets */; };
 		DDFEB41122EFEC0000DE025C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDFEB40F22EFEC0000DE025C /* LaunchScreen.storyboard */; };
+		DDFEB41922EFF0ED00DE025C /* ToDoswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFEB41822EFF0ED00DE025C /* ToDoswift.swift */; };
+		DDFEB41B22EFF11000DE025C /* MakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFEB41A22EFF11000DE025C /* MakeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		DDFEB40D22EFEC0000DE025C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDFEB41022EFEC0000DE025C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDFEB41222EFEC0000DE025C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDFEB41822EFF0ED00DE025C /* ToDoswift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoswift.swift; sourceTree = "<group>"; };
+		DDFEB41A22EFF11000DE025C /* MakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +50,6 @@
 				B231EC7F993927A1AF54C627 /* Pods-RealmToDo.debug.xcconfig */,
 				97E138C3E382BC03D95BE88B /* Pods-RealmToDo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -71,14 +74,32 @@
 		DDFEB40522EFEC0000DE025C /* RealmToDo */ = {
 			isa = PBXGroup;
 			children = (
+				DDFEB41D22EFF17E00DE025C /* Objects */,
+				DDFEB41C22EFF13D00DE025C /* Controllers */,
 				DDFEB40622EFEC0000DE025C /* AppDelegate.swift */,
-				DDFEB40822EFEC0000DE025C /* ViewController.swift */,
 				DDFEB40A22EFEC0000DE025C /* Main.storyboard */,
 				DDFEB40D22EFEC0000DE025C /* Assets.xcassets */,
 				DDFEB40F22EFEC0000DE025C /* LaunchScreen.storyboard */,
 				DDFEB41222EFEC0000DE025C /* Info.plist */,
 			);
 			path = RealmToDo;
+			sourceTree = "<group>";
+		};
+		DDFEB41C22EFF13D00DE025C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DDFEB40822EFEC0000DE025C /* ViewController.swift */,
+				DDFEB41A22EFF11000DE025C /* MakeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DDFEB41D22EFF17E00DE025C /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				DDFEB41822EFF0ED00DE025C /* ToDoswift.swift */,
+			);
+			path = Objects;
 			sourceTree = "<group>";
 		};
 		E6BC89AF12CB596BE857B21D /* Frameworks */ = {
@@ -204,7 +225,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDFEB41B22EFF11000DE025C /* MakeViewController.swift in Sources */,
 				DDFEB40922EFEC0000DE025C /* ViewController.swift in Sources */,
+				DDFEB41922EFF0ED00DE025C /* ToDoswift.swift in Sources */,
 				DDFEB40722EFEC0000DE025C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
