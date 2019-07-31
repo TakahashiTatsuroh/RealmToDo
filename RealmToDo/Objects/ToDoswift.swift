@@ -6,4 +6,14 @@
 //  Copyright © 2019 高橋達朗. All rights reserved.
 //
 
-import Foundation
+import RealmSwift
+
+class Todo: Object {
+    
+    @objc dynamic var id: Int = 0
+    
+    @objc dynamic var title: String = ""
+    
+    @objc dynamic var date: Date = Date()
+    
+}
