@@ -20,6 +20,8 @@ class ViewController: UIViewController {
         let realm = try! Realm()
         //        Todoの一覧を取得
         todos = realm.objects(Todo.self).reversed()
+        
+//        テーブルを更新
         tableView.reloadData()
     }
 //    画面が最初の一回だけ実行

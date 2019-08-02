@@ -13,37 +13,62 @@ class MakeViewController: UIViewController {
     
     @IBOutlet weak var textField: UITextField!
     
-//    前の画面から渡されたTODOを受け取る変数
     var todo: Todo? = nil
+    
+    @IBOutlet weak var button: UIButton!
+    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    fileprivate func createNewTodo(_ text: String) {
-        //        Realmに接続
+    override func viewWillAppear(_ animated: Bool) {
+        
+        if todo !== nil {
+//            追加
+            button.setTitle("追加", for: .normal)
+        } else {
+//            編集
+            button.setTitle("更新", for: .normal)
+            textField.text = todo?.title
+        }
+    }
+    
+    func createNewTodo(_ text: String) {
+        //        新規タスクを追加
+        // Realmに接続
         let realm = try! Realm()
-        //        データ登録
+        
+        // データを登録する
         let todo = Todo()
-        //        最大ID取得
+        // 最大のIDを取得
         let id = getMaxId()
         
         todo.id = id
         todo.title = text
         todo.date = Date()
         
-        
-        //        作成したTODOを登録する
+        // 作成したTODOを登録する
         try! realm.write {
             realm.add(todo)
+        }
+    }
+    
+    fileprivate func updateTodo(_ text: String) {
+        //            更新
+        let realm = try! Realm()
+        
+        try! realm.write {
+            todo?.title = text
         }
     }
     
     @IBAction func didClickButton(_ sender: UIButton) {
         
 //       nil文字かチェック
-        guard let text = textField.text else {
+        guard let text = textField.text else
+        {
 //            textField.textがnilの場合
             
 //            ボタンがクリックされた時の処理を中断
@@ -56,13 +81,17 @@ class MakeViewController: UIViewController {
             return
         }
         
-//        新規タスクを追加
+        if todo == nil {
+//        新規タスク
         createNewTodo(text)
         
+        } else {
+            updateTodo(text)
+        }
         
 //        戻る前画面に
 //        履歴から一つ前に戻る
-        navigationController?.popViewController(animated: true)
+    navigationController?.popViewController(animated: true)
     }
 //最大のIDを取得するメゾット
     func getMaxId() -> Int {
